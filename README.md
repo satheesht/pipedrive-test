@@ -26,3 +26,7 @@ Run
 2. npm start
 
 NOTE: Developed in latest NPM(6.4.1) and Node(10.12.0) versions. Not tested in older versions :)
+
+**Author**
+
+Satheesh Thangavel

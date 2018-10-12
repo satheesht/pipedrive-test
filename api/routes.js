@@ -1,3 +1,6 @@
+/*
+* All routes are imported here and fed to express.js
+*/
 const url = require('url')
 
 const register = (app) => {

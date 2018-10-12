@@ -1,3 +1,7 @@
+/*
+* Decorator : To handle response to the client
+* Sets proper HTTP code and controls the response
+*/
 const mongoose = require('mongoose'),
       ObjectId = mongoose.Types.ObjectId
 
