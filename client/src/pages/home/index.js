@@ -20,10 +20,14 @@ class HomePage extends Component {
   }
   onSubmit(event) {
     event.preventDefault()
+    this.setState({
+      progress: 0
+    })
     const form = new FormData()
     form.append('data', this.state.file)
     axios.post('/import', form, {
       onUploadProgress: (progressEvent) => {
+        console.log(progressEvent)
         if (progressEvent.lengthComputable) {
           this.setState({
             progress: progressEvent.loaded / progressEvent.total
@@ -32,6 +36,10 @@ class HomePage extends Component {
       }
     }).then(() => {
       this.props.history.push('/search')
+    }).catch(() => {
+      this.setState({
+        progress: null
+      })
     })
   }
   render() {
@@ -42,6 +50,7 @@ class HomePage extends Component {
             id="uploadField"
             type="file"
             accept=".csv"
+            disabled={this.state.progress !== null}
             onChange={this.onChange}
             className={styles.fileInput} />
           <input
@@ -54,8 +63,18 @@ class HomePage extends Component {
         <button
           id="uploadButton"
           type="submit"
+          disabled={!this.state.file || this.state.progress !== null}
           className={styles.uploadButton}>
-          Upload
+          <span
+            className={styles.progress}
+            style={{ width: `${100 * (this.state.progress || 0)}%` }} />
+          <span className={styles.uploadText}>
+            {this.state.progress ? (
+              this.state.progress === 1
+              ? 'Saving In DB...'
+              : `Uploading... ${Math.floor(100 * this.state.progress)}%`
+            ) : 'Upload'}
+          </span>
         </button>
       </form>
     )

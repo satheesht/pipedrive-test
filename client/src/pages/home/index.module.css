@@ -26,6 +26,7 @@
   border: 1px solid #999;
 }
 .uploadButton {
+  position: relative;
   background-color: #00a83c;
   width: 20rem;
   margin: 0 auto;
@@ -33,5 +34,24 @@
   height: 3rem;
   color: #fff;
   margin-top: 2rem;
+  border-radius: 5rem;
+  overflow: hidden;
+}
+.uploadText {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  line-height: 3rem;
+}
+.progress {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #008a2b;
   border-radius: 5rem;
 }
