@@ -1,0 +1,24 @@
+.container {
+  background-color: #f5f5f5;
+  height: 3rem;
+  width: 100%;
+}
+.pagesList {
+  height: 3rem;
+}
+.pageItem {
+  float: left;
+  height: 3rem;
+  line-height: 3rem;
+  width: 10rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+.link {
+  height: 3rem;
+  color: #444;
+}
+.activeLink {
+  color: #00a83c;
+  font-weight: bold;
+}
