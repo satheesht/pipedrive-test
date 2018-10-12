@@ -1,5 +1,6 @@
 const register = (app) => {
 	const importRoutes = require('./import/routes')
+	const searchRoutes = require('./search/routes')
 
 	app.all('*', (req, res, next) => {
 		res.header("Access-Control-Allow-Origin", "*");
@@ -21,6 +22,7 @@ const register = (app) => {
 	})
 
 	app.use('/import', importRoutes)
+	app.use('/search', searchRoutes)
 
 	app.use((req, res) => {
 		res.status(404)
