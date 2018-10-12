@@ -5,18 +5,18 @@ Tech stack:
 1. Frontend: ReactJS
 2. Backend: NodeJS
 3. Database: MongoDB (Mlab remote server)
-4. Actions: Upload Serve UI, CSV, Search _(Cache enabled for 30 seconds)_
+4. Actions:  Serve UI, Upload CSV, Search _(Cache enabled for 30 seconds)_
 
 **For Development:**
 
 _Frontend_
 1. npm install
-2. npm dev-client
+2. npm run dev-client
 
 
 _Backend_
 1. npm install
-2. npm build-client
+2. npm run build-client
 3. npm run dev
 
 **For Production**

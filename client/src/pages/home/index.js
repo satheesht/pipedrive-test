@@ -39,6 +39,7 @@ class HomePage extends Component {
       <form noValidate onSubmit={this.onSubmit} className={styles.form}>
         <div className={styles.inputContainer}>
           <input
+            id="uploadField"
             type="file"
             accept=".csv"
             onChange={this.onChange}
@@ -50,7 +51,12 @@ class HomePage extends Component {
             placeholder="Please click to select csv file to upload"
             className={styles.input} />
         </div>
-        <button type="submit" className={styles.uploadButton}>Upload</button>
+        <button
+          id="uploadButton"
+          type="submit"
+          className={styles.uploadButton}>
+          Upload
+        </button>
       </form>
     )
   }
